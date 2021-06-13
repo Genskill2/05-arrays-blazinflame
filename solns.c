@@ -12,7 +12,7 @@ int max(int x[],int n)
 	}
 	return(large);
   //function to find the element with the minimum value in a given array//
-int min(int x[], int n) 
+int max(int x[], int n) 
 {
   int i, small;
   small = x[0];
