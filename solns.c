@@ -63,40 +63,14 @@ int mode(int x[],int n)
    return value;
 }
 	//function to find the prime factors of a number and input the numbers as the elements of an array//
-   int factors(int n, int x[])
-  {
-	  int i, j;
-	  int prime = 0;
-	  int c = 0;
-	  int new;
- 
-  	for (i = 2; i <= n; i++)
-   	{
-     	if(n % i == 0)
-        {
-   			prime = 1;
-			for (j = 2; j <= i/2; j++)
-			{
-				if(i % j == 0)
-				{
-					prime = 0;
-					break;
-				}
-			} 
-			if(prime == 1)
-			{
-				x[c] = i;
-				c++;
-		new = n / i;
-		while(!(new % i))
-		{
-			x[c] = i;
-			c++;
-			new = new / i;
-			}
-			}
-	
-		}
-   }
-  	return c;
+  int factors(int num,int a[]){
+  int i,acc=0;
+  for(i=2;i<=num;i++){
+      while(num%i==0){
+        num=num/i;
+        a[acc] = i;
+        acc ++;
+      }
   }
+  return acc;
+}
