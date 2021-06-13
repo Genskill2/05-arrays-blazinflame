@@ -1,57 +1,18 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
-//function to find the element with the maximum value in a given array//
-int max(int x[],int n)
-{
-  int large,i;
-	large=x[0];
-	for(i=1;i<n;i++)
-        {
-		if(x[i]>large)
-			large=x[i];
-	}
-	return(large);
-  //function to find the element with the minimum value in a given array//
-int max(int x[], int n) 
-{
-  int i, small;
-  small = x[0];
-  for (i = 1; i < n; i++)
-  {
-    if (x[i] < small)
-    {
-      small = x[i];
-    }
-  }
-  return(small);
-  //function to find the average of the elements in a given array//
+//function to find the average of the elements in a given array//
 float average(int x[], int n)
 {
 int i,sum = 0;
-int average;
+int avg;
 for(i=0;i < n; i++)
 {
   sum = sum + x[i];
 }
-  average = sum / n;
-  return(average);
+  avg = sum / n;
+  return(avg);
 }
-  //function to find the mode of the elements in a given array//
-int mode(int a[],int num){
-  int i,j,modenum,moden=0,mode;
-  for(i=0;i<num;i++){
-    modenum =0;
-    for(j=0;j<num;j++){
-      if(a[i] ==a[j])
-        modenum++;
-    }
-    if(moden<modenum)
-      mode =a[i];
-    moden=modenum;  
-    }
-    return(mode);
-}
-	//function to find the prime factors of a number and input the numbers as the elements of an array//
+//function to find the prime factors of a number and input the numbers as the elements of an array//
   int factors(int n, int x[])
   {
 	  int i, j;
@@ -89,3 +50,57 @@ int mode(int a[],int num){
    }
   	return c;
   }
+
+//function to find the element with the maximum value in a given array//
+int max(int x[],int n)
+{
+  int large,i;
+	large=x[0];
+	for(i=1;i<n;i++)
+        {
+		if(x[i]>large)
+			large=x[i];
+	}
+	return(large);
+}
+  //function to find the element with the minimum value in a given array//
+int min(int x[], int n) 
+{
+  int i, small;
+  small = x[0];
+  for (i = 1; i < n; i++)
+  {
+    if (x[i] < small)
+    {
+      small = x[i];
+    }
+  }
+  return(small);
+}
+  //function to find the mode of the elements in a given array//
+int mode(int x[],int n)
+{
+   int value = 0; 
+  int count = 0;
+  int i, j;
+
+   for (i = 0; i < n; i++)
+   {
+      int number = 0;
+      
+      for (j = 0; j < n; j++) 
+      {
+         if (x[j] == x[i])
+         number++;
+      }
+      
+      if (number > count)
+      {
+         count = number;
+         value = x[i];
+      }
+   }
+
+   return value;
+}
+	
