@@ -37,40 +37,55 @@ for(i=0;i < n; i++)
   return(average);
 }
   //function to find the mode of the elements in a given array//
-int mode(int x[],int n)
-{
-   int value = 0; 
-  int count = 0;
-  int i, j;
-
-   for (i = 0; i < n; i++)
-   {
-      int number = 0;
-      
-      for (j = 0; j < n; j++) 
-      {
-         if (x[j] == x[i])
-         number++;
-      }
-      
-      if (number > count)
-      {
-         count = number;
-         value = x[i];
-      }
-   }
-
-   return value;
+int mode(int a[],int num){
+  int i,j,modenum,moden=0,mode;
+  for(i=0;i<num;i++){
+    modenum =0;
+    for(j=0;j<num;j++){
+      if(a[i] ==a[j])
+        modenum++;
+    }
+    if(moden<modenum)
+      mode =a[i];
+    moden=modenum;  
+    }
+    return(mode);
 }
 	//function to find the prime factors of a number and input the numbers as the elements of an array//
-  int factors(int num,int a[]){
-  int i,acc=0;
-  for(i=2;i<=num;i++){
-      while(num%i==0){
-        num=num/i;
-        a[acc] = i;
-        acc ++;
-      }
+  int factors(int n, int x[])
+  {
+	  int i, j;
+	  int prime = 0;
+	  int c = 0;
+	  int new;
+ 
+  	for (i = 2; i <= n; i++)
+   	{
+     	if(n % i == 0)
+        {
+   			prime = 1;
+			for (j = 2; j <= i/2; j++)
+			{
+				if(i % j == 0)
+				{
+					prime = 0;
+					break;
+				}
+			} 
+			if(prime == 1)
+			{
+				x[c] = i;
+				c++;
+		new = n / i;
+		while(!(new % i))
+		{
+			x[c] = i;
+			c++;
+			new = new / i;
+			}
+			}
+	
+		}
+   }
+  	return c;
   }
-  return acc;
-}
