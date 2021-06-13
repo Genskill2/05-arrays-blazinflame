@@ -98,6 +98,5 @@ int mode(int x[],int n)
 	
 		}
    }
-   printf("c is %d\n",c);
   	return c;
   }
