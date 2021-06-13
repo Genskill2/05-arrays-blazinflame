@@ -62,4 +62,31 @@ int mode(int x[],int n)
 
    return value;
 }
-  
+  int factors(int n, int x[])
+  {
+	  int i, j;
+	  int prime=0;
+	  int c=0;
+ 
+  	for (i = 2; i <= n; i++)
+   	{
+     	if(n % i == 0)
+        {
+   			prime = 1;
+			for (j = 2; j <= i/2; j++)
+			{
+				if(i % j == 0)
+				{
+					prime = 0;
+					break;
+				}
+			} 
+			if(prime == 1)
+			{
+				x[c] = prime;
+				c++;
+			}	          	
+		}
+   }
+  	return c;
+  }
